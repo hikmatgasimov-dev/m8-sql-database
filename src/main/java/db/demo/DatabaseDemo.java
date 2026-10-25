@@ -21,7 +21,7 @@ public class DatabaseDemo {
             runSqlFile(connection, "insert.sql");
             runSqlFile(connection, "query.sql");
             // Uncomment this only when testing database errors.
-            // runSqlFile(connection, "xtra.sql");
+            //runSqlFile(connection, "xtra.sql");
 
             System.out.println("Program finished.");
 

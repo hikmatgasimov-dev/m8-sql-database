@@ -233,3 +233,45 @@ By completing this project, you will learn how to:
 * update records
 * delete records
 * understand database error messages
+
+
+
+---
+
+## My results
+
+### Final student list (after the update and delete queries)
+
+| id | name | email | age | course |
+|---|---|---|---|---|
+| 1 | Anna Berzina | anna.berzina@example.com | 20 | Java Fundamentals |
+| 2 | Janis Ozols | janis.ozols@example.com | 22 | Web Development |
+| 3 | Liga Kalnina | liga.kalnina@example.com | 21 | Databases |
+| 4 | Peteris Liepa | peteris.liepa@example.com | 18 | Databases |
+
+### Students per course (before the delete)
+
+| course | students |
+|---|---|
+| Java Fundamentals | 2 |
+| Databases | 3 |
+| Web Development | 0 |
+
+### Error tests
+
+| Test | Error message |
+|---|---|
+| Foreign key (course_id 999) | `FOREIGN KEY constraint failed` |
+| Duplicate id | `UNIQUE constraint failed: students.id` |
+| Duplicate email | `UNIQUE constraint failed: students.email` |
+| NULL name | `NOT NULL constraint failed: students.name` |
+| Age 12 | `CHECK constraint failed: age >= 18` |
+| Missing table | `no such table: teachers` |
+| Missing column | `no such column: phone_number` |
+
+### What I learned
+
+- A foreign key stops a student from pointing to a course that does not exist.
+- `LEFT JOIN` keeps courses that have no students, so `COUNT` can show 0.
+- `UPDATE` and `DELETE` need a `WHERE` clause, or they change every row.
+- Constraints (`NOT NULL`, `UNIQUE`, `CHECK`) are enforced by the database, not by Java.
