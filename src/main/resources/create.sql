@@ -30,3 +30,11 @@ CREATE TABLE courses (
 -- course_id must be a foreign key that references courses(course_id).
 -- Hint: look up UNIQUE and FOREIGN KEY ... REFERENCES ...
 
+CREATE TABLE students (
+                          id        INTEGER PRIMARY KEY,
+                          name      TEXT NOT NULL,
+                          email     TEXT NOT NULL UNIQUE,
+                          age       INTEGER CHECK (age >= 18),
+                          course_id INTEGER NOT NULL,
+                          FOREIGN KEY (course_id) REFERENCES courses (course_id)
+);
