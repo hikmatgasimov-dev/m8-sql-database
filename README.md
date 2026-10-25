@@ -275,3 +275,13 @@ By completing this project, you will learn how to:
 - `LEFT JOIN` keeps courses that have no students, so `COUNT` can show 0.
 - `UPDATE` and `DELETE` need a `WHERE` clause, or they change every row.
 - Constraints (`NOT NULL`, `UNIQUE`, `CHECK`) are enforced by the database, not by Java.
+
+
+## Additional queries (`extra.sql`)
+
+Extra practice beyond the exercise: sorting (`ORDER BY`), ranges (`BETWEEN`), text search (`LIKE`),
+aggregates (`AVG`, `MIN`, `MAX`), group filters (`HAVING`), finding rows without a match (`LEFT JOIN ... IS NULL`)
+and a transaction that is rolled back.
+
+- The `ROLLBACK` example shows atomicity: the age is 99 inside the transaction and 20 again afterwards.
+- "Courses with no students" returns no rows, because every course has a student after the update.

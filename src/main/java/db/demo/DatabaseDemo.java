@@ -23,6 +23,8 @@ public class DatabaseDemo {
             // Uncomment this only when testing database errors.
             //runSqlFile(connection, "xtra.sql");
 
+            runSqlFile(connection, "extra.sql");
+
             System.out.println("Program finished.");
 
         } catch (SQLException e) {
