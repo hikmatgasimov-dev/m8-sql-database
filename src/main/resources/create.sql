@@ -12,6 +12,11 @@ DROP TABLE IF EXISTS courses;
 -- credits     INTEGER, must be greater than 0
 -- Hint: look up PRIMARY KEY, NOT NULL and CHECK.
 
+CREATE TABLE courses (
+                         course_id   INTEGER PRIMARY KEY,
+                         course_name TEXT NOT NULL,
+                         credits     INTEGER NOT NULL CHECK (credits > 0)
+);
 
 
 -- TODO 2:
@@ -24,5 +29,4 @@ DROP TABLE IF EXISTS courses;
 -- course_id INTEGER, required
 -- course_id must be a foreign key that references courses(course_id).
 -- Hint: look up UNIQUE and FOREIGN KEY ... REFERENCES ...
-
 
