@@ -20,10 +20,12 @@ public class DatabaseDemo {
             runSqlFile(connection, "create.sql");
             runSqlFile(connection, "insert.sql");
             runSqlFile(connection, "query.sql");
+            runSqlFile(connection, "extra.sql");
+
             // Uncomment this only when testing database errors.
             //runSqlFile(connection, "xtra.sql");
 
-            runSqlFile(connection, "extra.sql");
+
 
             System.out.println("Program finished.");
 

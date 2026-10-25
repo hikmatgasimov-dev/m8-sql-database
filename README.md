@@ -279,9 +279,19 @@ By completing this project, you will learn how to:
 
 ## Additional queries (`extra.sql`)
 
-Extra practice beyond the exercise: sorting (`ORDER BY`), ranges (`BETWEEN`), text search (`LIKE`),
-aggregates (`AVG`, `MIN`, `MAX`), group filters (`HAVING`), finding rows without a match (`LEFT JOIN ... IS NULL`)
-and a transaction that is rolled back.
+Extra practice beyond the exercise. It runs after `query.sql`.
 
-- The `ROLLBACK` example shows atomicity: the age is 99 inside the transaction and 20 again afterwards.
-- "Courses with no students" returns no rows, because every course has a student after the update.
+**Part A, on the exercise tables:** sorting (`ORDER BY`), ranges (`BETWEEN`), text search (`LIKE`),
+aggregates (`AVG`, `MIN`, `MAX`), group filters (`HAVING`), rows without a match (`LEFT JOIN ... IS NULL`),
+a subquery, `CASE`, `GROUP_CONCAT`, percentages and a window function (`RANK`).
+A transaction that is rolled back shows atomicity: the age is 99 inside it and 20 again afterwards.
+
+**Part B, a bigger design:** a `teachers` table linked to `courses` with a foreign key, and an `enrollments`
+table that links students and courses (many-to-many, with a grade). It adds a three-table join, a view,
+an index, `ON DELETE CASCADE` and a committed transaction. The new tables are dropped at the end of the
+file, so the main exercise can run again from a clean database.
+
+Notes:
+- "Courses that have no students" returns no rows, because every course has a student after the update.
+- `extra.sql` must run after `query.sql` (see `DatabaseDemo.java`).
+- If a run is ever stopped halfway, delete `student.db` and run again.
