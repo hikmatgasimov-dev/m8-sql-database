@@ -2,17 +2,19 @@ PRAGMA foreign_keys = ON;
 
 -- TODO 1:
 -- Select all courses.
-
+SELECT * FROM courses;
 
 
 -- TODO 2:
 -- Select all students.
 
-
+SELECT * FROM students;
 
 -- TODO 3:
 -- Select students older than 20.
 -- Hint: use WHERE.
+
+SELECT * FROM students WHERE age > 20;
 
 
 
